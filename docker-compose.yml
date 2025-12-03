@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hackathon-backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # На фронте шьём относительный путь к API и username бота
+        VITE_API_BASE: /api
+        # УКАЖИТЕ свой username бота (без @), либо задайте через --build-arg при сборке
+        VITE_TG_BOT_USERNAME: AuthHackBot
+    container_name: hackathon-frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    restart: unless-stopped
+
+networks:
+  default:
+    name: hackathon-net
