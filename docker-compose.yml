@@ -8,6 +8,8 @@ services:
     container_name: hackathon-backend
     env_file:
       - ./backend/.env
+    ports:
+      - "8080:8080"
     restart: unless-stopped
 
   frontend:
@@ -23,7 +25,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "0.0.0.0:8080:80"
+      - "80:80"
     restart: unless-stopped
 
 networks:
