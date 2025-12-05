@@ -5,30 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee756409-1639-4f70-a947-25e984e0d3de" name="Changes" comment="fixes">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-wrapper/AppWrapper/AppWrapper.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-wrapper/AppWrapper/AppWrapper.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-wrapper/AppWrapper/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/main-context/main-context.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/main-context/main-provider.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/styles/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/styles/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/styles/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Home/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Home/ui/Home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/Navigation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/Navigation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/card-hack/ui/CardHack/CardHack.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/card-hack/ui/CardHack/CardHack.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/card-hack/ui/CardHack/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/page-wrapper/ui/PageWrapper.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/page-wrapper/ui/PageWrapper.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/auth-token/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/ui/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home/ui/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home/ui/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home/ui/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,11 +88,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/modules/Header/ui" />
+      <recent name="$PROJECT_DIR$/frontend/src/modules/Navigation/ui" />
       <recent name="$PROJECT_DIR$/frontend/src/app/main-context.js" />
       <recent name="$PROJECT_DIR$/frontend/src/app/routes" />
       <recent name="$PROJECT_DIR$/frontend/src/shared" />
-      <recent name="$PROJECT_DIR$/frontend/src/pages/Home/ui" />
-      <recent name="$PROJECT_DIR$/frontend/src/pages/Auth/ui" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -115,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764756769325</updated>
-      <workItem from="1764756770562" duration="58849000" />
+      <workItem from="1764756770562" duration="64032000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -269,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764833260549</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764966309367</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1764966309367</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

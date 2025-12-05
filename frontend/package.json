@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^1.13.2",
+    "classnames": "^2.5.1",
     "path": "^0.12.7",
     "pxtorem": "^1.0.0",
     "react": "^19.1.1",

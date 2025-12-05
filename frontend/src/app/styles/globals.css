@@ -1,6 +1,15 @@
 @import "fonts.css";
 
 :root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-light-purple: #734AC6;
+  --color-ultralight-purple: #DBC5EE;
+  --color-dark-purple: #641CB1;
+
+  --border-radius-l: 60px;
+  --border-radius-m: 30px;
+
   --transition-duration: 0.2s;
 }
 

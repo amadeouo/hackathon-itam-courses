@@ -1,0 +1,54 @@
+.wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 16px; /* отступ от низа */
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* чтобы клики шли только по самой панели */
+  z-index: 100;
+}
+
+.list {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 0% 0%, #5b53ff 0%, #020626 45%, #020626 100%);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* общие стили кнопок */
+.item {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+/* активное состояние + "световое" пятно */
+.active::before {
+  content: "";
+  position: absolute;
+  inset: -10px -12px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}
+
+.active {
+  color: #f7f2ff;
+}
