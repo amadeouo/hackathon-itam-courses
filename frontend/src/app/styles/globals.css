@@ -1,0 +1,28 @@
+@import "fonts.css";
+
+:root {
+  --transition-duration: 0.2s;
+}
+
+a,
+button,
+label,
+input,
+select,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vh;
+}
+
+#root {
+  min-width: 320px;
+}
+

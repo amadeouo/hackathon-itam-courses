@@ -1,11 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { auth } from '../utils/auth.js'
+import { auth } from '@shared/auth-token/auth.js'
 
-const API_BASE = import.meta?.env?.VITE_API_BASE || 'http://localhost:8080/api'
-const BOT_USERNAME = import.meta?.env?.VITE_TG_BOT_USERNAME || ''
-
-console.log('BOT →', import.meta.env.VITE_TG_BOT_USERNAME)
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8080/api'
+const BOT_USERNAME = import.meta.env.VITE_TG_BOT_USERNAME || ''
 
 export function Auth() {
   const navigate = useNavigate()
@@ -18,7 +16,6 @@ export function Auth() {
     }
 
     window.onTelegramAuth = async function onTelegramAuth(user) {
-      console.log('TG user payload →', user);
       try {
         const res = await fetch(`${API_BASE}/auth/telegram`, {
           method: 'POST',
@@ -38,7 +35,6 @@ export function Auth() {
       }
     }
 
-    // Inject Telegram widget script dynamically
     const script = document.createElement('script')
     script.async = true
     script.src = 'https://telegram.org/js/telegram-widget.js?22'
@@ -53,7 +49,6 @@ export function Auth() {
     if (container) container.appendChild(script)
 
     return () => {
-      // cleanup
       if (container && script.parentNode === container) {
         return container.removeChild(script)
       }
@@ -62,17 +57,17 @@ export function Auth() {
   }, [navigate])
 
   return (
-    <div style={{ display: 'flex', minHeight: '70vh', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16 }}>
+    <div>
       <h2>Вход через Telegram</h2>
       {!BOT_USERNAME && (
-        <p style={{ color: 'crimson', maxWidth: 520, textAlign: 'center' }}>
+        <p>
           Не задан VITE_TG_BOT_USERNAME. Укажите юзернейм бота в .env фронтенда, например:
           <br />
           <code>VITE_TG_BOT_USERNAME=your_bot_username</code>
         </p>
       )}
       <div ref={widgetRef} />
-      <button onClick={() => navigate('/') } style={{ marginTop: 24 }}>На главную</button>
+      <button onClick={() => navigate('/') }>На главную</button>
     </div>
   )
 }

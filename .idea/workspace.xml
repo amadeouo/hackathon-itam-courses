@@ -4,16 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee756409-1639-4f70-a947-25e984e0d3de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/router.jsx" afterDir="false" />
+    <list default="true" id="ee756409-1639-4f70-a947-25e984e0d3de" name="Changes" comment="fixes">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-wrapper/AppWrapper/AppWrapper.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-wrapper/AppWrapper/AppWrapper.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-wrapper/AppWrapper/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/main-context/main-context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/main-context/main-provider.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/styles/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/styles/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/styles/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Home/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Home/ui/Home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/auth-token/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/ui/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home/ui/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSX Component Folder with styles" />
+        <option value="JSX Component Folder with module styles.jsx.child.0" />
+        <option value="JSX Component Folder with module styles.jsx.child.1" />
+        <option value="JSX Component Folder with module styles" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,6 +92,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/app/main-context.js" />
+      <recent name="$PROJECT_DIR$/frontend/src/app/routes" />
+      <recent name="$PROJECT_DIR$/frontend/src/shared" />
+      <recent name="$PROJECT_DIR$/frontend/src/pages/Home/ui" />
+      <recent name="$PROJECT_DIR$/frontend/src/pages/Auth/ui" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,12 +115,170 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764756769325</updated>
-      <workItem from="1764756770562" duration="23881000" />
+      <workItem from="1764756770562" duration="58849000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1764795720936</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764795720936</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764799785718</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764799785718</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764800146008</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764800146008</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764800948427</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764800948427</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764801043103</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764801043103</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764803562206</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764803562206</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764804404608</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764804404608</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764804815017</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764804815017</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764806597481</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764806597481</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764806766704</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764806766704</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764828985882</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764828985882</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764829753410</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764829753410</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764831064108</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1764831064108</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764831541098</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1764831541098</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764831639528</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1764831639528</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764831643967</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1764831643967</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764832598018</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1764832598018</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764832817303</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1764832817303</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1764833260549</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1764833260549</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
