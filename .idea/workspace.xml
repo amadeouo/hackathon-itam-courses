@@ -5,31 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee756409-1639-4f70-a947-25e984e0d3de" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/styles/variables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui/MainMenu.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui/MainMenu.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Search/ui/Search.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Search/ui/Search.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Search/ui/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/Dialog/ui/FilterDialog.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/Dialog/ui/FilterDialog.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/Dialog/ui/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui/MultipleSelect.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui/MultipleSelect.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/styles/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/styles/fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/Navigation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/Navigation.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/shared/assets/icons/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/assets/icons/search.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/shared/page-wrapper/ui/PageWrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/page-wrapper/ui/PageWrapper.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1764756769325</updated>
       <workItem from="1764756770562" duration="74562000" />
-      <workItem from="1764982613617" duration="4023000" />
+      <workItem from="1764982613617" duration="4839000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -295,7 +272,39 @@
       <option name="project" value="LOCAL" />
       <updated>1764971516795</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add dialog modal for filter">
+      <option name="closed" value="true" />
+      <created>1765027773468</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1765027773468</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add fonts">
+      <option name="closed" value="true" />
+      <created>1765027784103</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1765027784103</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fixes for globals">
+      <option name="closed" value="true" />
+      <created>1765027801103</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1765027801103</updated>
+    </task>
+    <task id="LOCAL-00026" summary="init">
+      <option name="closed" value="true" />
+      <created>1765027828042</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1765027828042</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +312,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixes" />
+    <MESSAGE value="add dialog modal for filter" />
+    <MESSAGE value="add fonts" />
+    <MESSAGE value="fixes for globals" />
     <MESSAGE value="init" />
     <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>

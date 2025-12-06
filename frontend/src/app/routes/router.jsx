@@ -14,9 +14,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/search",
+        element: "",
       },
       {
         path: "profile",
+        element: "",
       }
     ]
   },
