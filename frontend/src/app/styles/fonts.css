@@ -1,3 +1,10 @@
-@font-face {
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
 
+@font-face {
+  font-family: 'Roboto Flex';
+  font-weight: 400;
+  src: url("fonts/RobotoFlex.woff2") format("woff2"), url("fonts/RobotoFlex.woff2") format("woff");
 }
