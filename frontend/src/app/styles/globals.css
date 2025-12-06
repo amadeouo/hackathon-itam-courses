@@ -1,17 +1,5 @@
 @import "fonts.css";
-
-:root {
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-light-purple: #734AC6;
-  --color-ultralight-purple: #DBC5EE;
-  --color-dark-purple: #641CB1;
-
-  --border-radius-l: 60px;
-  --border-radius-m: 30px;
-
-  --transition-duration: 0.2s;
-}
+@import "variables.css";
 
 a,
 button,
@@ -24,14 +12,17 @@ svg * {
 }
 
 body {
+  font-family: "Roboto Flex", sans-serif;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-width: 100vh;
+  min-height: 100vh;
+  background-color: var(--color-black);
 }
 
 #root {
+  width: 100%;
   min-width: 320px;
+  padding-inline: 24px;
 }
 
