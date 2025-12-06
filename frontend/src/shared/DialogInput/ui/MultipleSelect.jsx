@@ -37,31 +37,47 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function MultipleSelectChip() {
+export default function MultipleSelectChip({ 
+  value: controlledValue, 
+  onChange: onValueChange,
+  label = "Выберите ваш стек"
+}) {
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
+  
+  // Используем контролируемое значение, если оно передано, иначе локальное состояние
+  const [localValue, setLocalValue] = React.useState([]);
+  const personName = controlledValue !== undefined ? controlledValue : localValue;
+  const isControlled = controlledValue !== undefined;
 
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
+    
+    const newValue = typeof value === 'string' ? value.split(',') : value;
+    
+    if (isControlled) {
+      // Если компонент контролируемый, вызываем callback
+      if (onValueChange) {
+        onValueChange(newValue);
+      }
+    } else {
+      // Если компонент неконтролируемый, используем локальное состояние
+      setLocalValue(newValue);
+    }
   };
 
   return (
     <div>
-      <FormControl sx={{ marginTop: 2 }}>
-        <InputLabel id="demo-multiple-chip-label">Выберите ваш стек</InputLabel>
+      <FormControl sx={{ marginTop: 2, minWidth: 250 }}>
+        <InputLabel id="demo-multiple-chip-label">{label}</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
           multiple
           value={personName}
           onChange={handleChange}
-          input={<OutlinedInput id="select-multiple-chip" label="Выберите ваш стек" />}
+          input={<OutlinedInput id="select-multiple-chip" label={label} />}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
               {selected.map((value) => (

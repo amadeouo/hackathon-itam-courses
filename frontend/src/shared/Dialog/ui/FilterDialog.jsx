@@ -5,13 +5,20 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
-import {useState} from "react";
+import { useState } from "react";
 import MultipleSelectChip from "@shared/DialogInput/ui/MultipleSelect";
+import {TextField} from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 
-
-
-export const FilterDialog = () => {
+export const FilterDialog = ({ onFiltersChange }) => {
   const [open, setOpen] = useState(false);
+  
+  // Состояние для всех полей формы
+  const [formData, setFormData] = useState({
+    stack: [], // выбранные технологии
+    difficulty: '', // уровень сложности
+    dateRange: '', // диапазон дат
+  });
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -21,13 +28,45 @@ export const FilterDialog = () => {
     setOpen(false);
   };
 
+  // Обработчик изменения стека технологий
+  const handleStackChange = (selectedStack) => {
+    setFormData(prev => ({
+      ...prev,
+      stack: selectedStack
+    }));
+  };
+
+  // Обработчик изменения других полей
+  const handleFieldChange = (fieldName, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [fieldName]: value
+    }));
+  };
+
+  // Обработчик отправки формы
   const handleSubmit = (event) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const formJson = Object.fromEntries((formData).entries());
-    const email = formJson.email;
-    console.log(email);
+    
+    // Здесь у вас есть все данные формы в formData
+    console.log('Данные формы:', formData);
+    
+    // Передаем данные обратно в родительский компонент (если передан callback)
+    if (onFiltersChange) {
+      onFiltersChange(formData);
+    }
+    
+    // Закрываем диалог
     handleClose();
+  };
+
+  // Обработчик сброса формы
+  const handleReset = () => {
+    setFormData({
+      stack: [],
+      difficulty: '',
+      dateRange: '',
+    });
   };
 
   return (
@@ -55,13 +94,37 @@ export const FilterDialog = () => {
           <DialogContentText>
             Выберите нужные вам фильтры для поиска хакатонов
           </DialogContentText>
-          <form onSubmit={handleSubmit} id="subscription-form">
-            <MultipleSelectChip />
+          <form onSubmit={handleSubmit} id="filter-form">
+            {/* Контролируемый MultipleSelectChip - передаем value и onChange */}
+            <MultipleSelectChip 
+              value={formData.stack}
+              onChange={handleStackChange}
+            />
+            
+            {/* Пример: можно добавить другие поля формы */}
+            {/* Например, поле для уровня сложности */}
+            <TextField
+              select
+              label="Уровень сложности"
+              value={formData.difficulty}
+              onChange={(e) => handleFieldChange('difficulty', e.target.value)}
+              sx={{ mt: 2, minWidth: 250 }}
+            >
+              <MenuItem value="any">Любой</MenuItem>
+              <MenuItem value="beginner">Начинающий</MenuItem>
+              <MenuItem value="intermediate">Средний</MenuItem>
+              <MenuItem value="advanced">Продвинутый</MenuItem>
+            </TextField>
           </form>
         </DialogContent>
         <DialogActions>
+          <Button onClick={handleReset}>Сбросить</Button>
           <Button onClick={handleClose}>Отменить</Button>
-          <Button type="submit" form="subscription-form">
+          <Button 
+            type="submit" 
+            form="filter-form"
+            variant="contained"
+          >
             Применить
           </Button>
         </DialogActions>
