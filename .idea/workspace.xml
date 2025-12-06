@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ee756409-1639-4f70-a947-25e984e0d3de" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/main-context/main-provider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/main-context/main-provider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui/MainMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui/MainMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modules/Search/ui/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/modules/Search/ui/Search.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/shared/Dialog/ui/FilterDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/Dialog/ui/FilterDialog.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui/MultipleSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui/MultipleSelect.jsx" afterDir="false" />
     </list>

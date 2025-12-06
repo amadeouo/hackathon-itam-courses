@@ -4,10 +4,27 @@ import {MainContext} from "./main-context";
 export const MainProvider = (props) => {
   const { children } = props
 
-  const [state, setState] = useState({})
+  const [formDataSearch, setFormDataSearch] = useState({
+    stack: [],
+    sex: '',
+  })
+  const [formDataMain, setFormDataMain] = useState({
+    stack: [],
+    format: '',
+    dateRange: '',
+  });
+
+
 
   return (
-    <MainContext.Provider value={{state, setState}}>
+    <MainContext.Provider value={
+      {
+        formDataSearch,
+        setFormDataSearch,
+        formDataMain,
+        setFormDataMain,
+      }
+    }>
       {children}
     </MainContext.Provider>
   )

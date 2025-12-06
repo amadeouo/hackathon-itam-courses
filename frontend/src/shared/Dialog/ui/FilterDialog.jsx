@@ -5,19 +5,19 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MultipleSelectChip from "@shared/DialogInput/ui/MultipleSelect";
-import {TextField} from "@mui/material";
+import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
+import { MainContext } from "@app/main-context/main-context";
 
-export const FilterDialog = ({ onFiltersChange }) => {
+export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
   const [open, setOpen] = useState(false);
-  
-  const [formData, setFormData] = useState({
-    stack: [],
-    difficulty: '',
-    dateRange: '',
-  });
+
+  const { formDataSearch, setFormDataSearch, formDataMain, setFormDataMain } = useContext(MainContext);
+
+  const currentFormData = isSearchFilter ? formDataSearch : formDataMain;
+  const setCurrentFormData = isSearchFilter ? setFormDataSearch : setFormDataMain;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -28,14 +28,14 @@ export const FilterDialog = ({ onFiltersChange }) => {
   };
 
   const handleStackChange = (selectedStack) => {
-    setFormData(prev => ({
+    setCurrentFormData(prev => ({
       ...prev,
-      stack: selectedStack
+      stack: Array.isArray(selectedStack) ? selectedStack : []
     }));
   };
 
   const handleFieldChange = (fieldName, value) => {
-    setFormData(prev => ({
+    setCurrentFormData(prev => ({
       ...prev,
       [fieldName]: value
     }));
@@ -43,22 +43,27 @@ export const FilterDialog = ({ onFiltersChange }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    console.log('Данные формы:', formData);
-    
+
     if (onFiltersChange) {
-      onFiltersChange(formData);
+      onFiltersChange(currentFormData);
     }
     
     handleClose();
   };
 
   const handleReset = () => {
-    setFormData({
-      stack: [],
-      difficulty: '',
-      dateRange: '',
-    });
+    if (isSearchFilter) {
+      setFormDataSearch({
+        stack: [],
+        sex: '',
+      });
+    } else {
+      setFormDataMain({
+        stack: [],
+        format: '',
+        dateRange: '',
+      });
+    }
   };
 
   return (
@@ -80,43 +85,59 @@ export const FilterDialog = ({ onFiltersChange }) => {
           </defs>
         </svg>
       </button>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle>Фильтры</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Выберите нужные вам фильтры для поиска хакатонов
-          </DialogContentText>
-          <form onSubmit={handleSubmit} id="filter-form">
+        <form onSubmit={handleSubmit} id="filter-form">
+          <DialogContent>
+            <DialogContentText>
+              Выберите нужные фильтры для поиска {isSearchFilter ? 'участников' : 'хакатонов'}
+            </DialogContentText>
             <MultipleSelectChip
-              value={formData.stack}
+              value={currentFormData.stack || []}
               onChange={handleStackChange}
+              label={isSearchFilter ? 'Выберите стек участника' : 'Выберите ваш стек'}
             />
-            
-            <TextField
-              select
-              label="Уровень сложности"
-              value={formData.difficulty}
-              onChange={(e) => handleFieldChange('difficulty', e.target.value)}
-              sx={{ mt: 2, minWidth: 250 }}
+
+            {isSearchFilter ? (
+              <TextField
+                select
+                label="Пол"
+                value={currentFormData.sex || ''}
+                onChange={(e) => handleFieldChange('sex', e.target.value)}
+                fullWidth
+                sx={{ mt: 2 }}
+              >
+                <MenuItem value="">Любой</MenuItem>
+                <MenuItem value="male">Мужской</MenuItem>
+                <MenuItem value="female">Женский</MenuItem>
+              </TextField>
+            ) : (
+              <TextField
+                select
+                label="Формат"
+                value={currentFormData.format || ''}
+                onChange={(e) => handleFieldChange('format', e.target.value)}
+                fullWidth
+                sx={{ mt: 2 }}
+              >
+                <MenuItem value="">Любой</MenuItem>
+                <MenuItem value="offline">Оффлайн</MenuItem>
+                <MenuItem value="online">Онлайн</MenuItem>
+              </TextField>
+            )}
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleReset}>Сбросить</Button>
+            <Button onClick={handleClose}>Отменить</Button>
+            <Button 
+              type="submit" 
+              form="filter-form"
+              variant="contained"
             >
-              <MenuItem value="any">Любой</MenuItem>
-              <MenuItem value="beginner">Начинающий</MenuItem>
-              <MenuItem value="intermediate">Средний</MenuItem>
-              <MenuItem value="advanced">Продвинутый</MenuItem>
-            </TextField>
-          </form>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleReset}>Сбросить</Button>
-          <Button onClick={handleClose}>Отменить</Button>
-          <Button 
-            type="submit" 
-            form="filter-form"
-            variant="contained"
-          >
-            Применить
-          </Button>
-        </DialogActions>
+              Применить
+            </Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </>
   )

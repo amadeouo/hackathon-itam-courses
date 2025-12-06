@@ -40,7 +40,7 @@ function getStyles(name, personName, theme) {
 export default function MultipleSelectChip({ 
   value: controlledValue, 
   onChange: onValueChange,
-  label = "Выберите ваш стек"
+  label = "Выберите ваш стек",
 }) {
   const theme = useTheme();
   
@@ -66,7 +66,7 @@ export default function MultipleSelectChip({
 
   return (
     <div>
-      <FormControl sx={{ marginTop: 2, minWidth: 250 }}>
+      <FormControl sx={{ marginTop: 2, width: '100%' }}>
         <InputLabel id="demo-multiple-chip-label">{label}</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"

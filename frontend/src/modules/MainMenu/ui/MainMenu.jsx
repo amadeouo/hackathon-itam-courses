@@ -1,10 +1,17 @@
 import classes from './MainMenu.module.css'
 import {Search} from "@modules/Search/ui/Search";
 
-export const MainMenu = () => {
+export const MainMenu = (props) => {
+  const {
+    isSearchPage
+  } = props
+
   return (
     <section className={classes.wrapper}>
-      <Search isHaveFilter />
+      <Search
+        isHaveFilter
+        isSearchFilter={isSearchPage}
+      />
     </section>
   )
 }

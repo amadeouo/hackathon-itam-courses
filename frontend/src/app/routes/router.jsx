@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/search",
-        element: "",
+        element: <MainMenu isSearchPage />,
       },
       {
         path: "profile",

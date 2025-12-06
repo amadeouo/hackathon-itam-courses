@@ -1,10 +1,18 @@
 import classes from './Search.module.css'
 import {FilterDialog} from "@shared/Dialog/ui/FilterDialog";
+import {useLocation} from "react-router-dom";
 
 export const Search = (props) => {
   const {
     isHaveFilter,
+    isSearchFilter: isSearchFilterProp,
   } = props
+
+  const location = useLocation().pathname;
+  // Определяем, является ли это страницей поиска участников
+  const isSearchFilter = isSearchFilterProp !== undefined 
+    ? isSearchFilterProp 
+    : location === '/search';
 
   return (
     <form
@@ -21,10 +29,10 @@ export const Search = (props) => {
           className={classes.input}
           type="search"
           id="search"
-          placeholder="Поиск"
+          placeholder={isSearchFilter ? 'Поиск участников' : 'Поиск хакатонов'}
         />
       </div>
-      {isHaveFilter && (<FilterDialog />)}
+      {isHaveFilter && <FilterDialog isSearchFilter={isSearchFilter} />}
     </form>
   )
 }
