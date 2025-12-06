@@ -44,7 +44,6 @@ export default function MultipleSelectChip({
 }) {
   const theme = useTheme();
   
-  // Используем контролируемое значение, если оно передано, иначе локальное состояние
   const [localValue, setLocalValue] = React.useState([]);
   const personName = controlledValue !== undefined ? controlledValue : localValue;
   const isControlled = controlledValue !== undefined;
@@ -57,12 +56,10 @@ export default function MultipleSelectChip({
     const newValue = typeof value === 'string' ? value.split(',') : value;
     
     if (isControlled) {
-      // Если компонент контролируемый, вызываем callback
       if (onValueChange) {
         onValueChange(newValue);
       }
     } else {
-      // Если компонент неконтролируемый, используем локальное состояние
       setLocalValue(newValue);
     }
   };

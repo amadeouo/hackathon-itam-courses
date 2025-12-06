@@ -13,11 +13,10 @@ import MenuItem from "@mui/material/MenuItem";
 export const FilterDialog = ({ onFiltersChange }) => {
   const [open, setOpen] = useState(false);
   
-  // Состояние для всех полей формы
   const [formData, setFormData] = useState({
-    stack: [], // выбранные технологии
-    difficulty: '', // уровень сложности
-    dateRange: '', // диапазон дат
+    stack: [],
+    difficulty: '',
+    dateRange: '',
   });
 
   const handleClickOpen = () => {
@@ -28,7 +27,6 @@ export const FilterDialog = ({ onFiltersChange }) => {
     setOpen(false);
   };
 
-  // Обработчик изменения стека технологий
   const handleStackChange = (selectedStack) => {
     setFormData(prev => ({
       ...prev,
@@ -36,7 +34,6 @@ export const FilterDialog = ({ onFiltersChange }) => {
     }));
   };
 
-  // Обработчик изменения других полей
   const handleFieldChange = (fieldName, value) => {
     setFormData(prev => ({
       ...prev,
@@ -44,23 +41,18 @@ export const FilterDialog = ({ onFiltersChange }) => {
     }));
   };
 
-  // Обработчик отправки формы
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    // Здесь у вас есть все данные формы в formData
     console.log('Данные формы:', formData);
     
-    // Передаем данные обратно в родительский компонент (если передан callback)
     if (onFiltersChange) {
       onFiltersChange(formData);
     }
     
-    // Закрываем диалог
     handleClose();
   };
 
-  // Обработчик сброса формы
   const handleReset = () => {
     setFormData({
       stack: [],
@@ -95,14 +87,11 @@ export const FilterDialog = ({ onFiltersChange }) => {
             Выберите нужные вам фильтры для поиска хакатонов
           </DialogContentText>
           <form onSubmit={handleSubmit} id="filter-form">
-            {/* Контролируемый MultipleSelectChip - передаем value и onChange */}
-            <MultipleSelectChip 
+            <MultipleSelectChip
               value={formData.stack}
               onChange={handleStackChange}
             />
             
-            {/* Пример: можно добавить другие поля формы */}
-            {/* Например, поле для уровня сложности */}
             <TextField
               select
               label="Уровень сложности"
