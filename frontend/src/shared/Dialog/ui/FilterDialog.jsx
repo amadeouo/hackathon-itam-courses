@@ -64,6 +64,7 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
         dateRange: '',
       });
     }
+    handleClose()
   };
 
   return (
@@ -85,9 +86,23 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
           </defs>
         </svg>
       </button>
-      <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        maxWidth="sm"
+        fullWidth
+        sx={{
+          '& .MuiDialog-paper': {
+            borderRadius: 5,
+            overflow: 'hidden',
+          },
+        }}
+      >
         <DialogTitle>Фильтры</DialogTitle>
-        <form onSubmit={handleSubmit} id="filter-form">
+        <form
+          onSubmit={handleSubmit}
+          id="filter-form"
+        >
           <DialogContent>
             <DialogContentText>
               Выберите нужные фильтры для поиска {isSearchFilter ? 'участников' : 'хакатонов'}
@@ -97,7 +112,6 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
               onChange={handleStackChange}
               label={isSearchFilter ? 'Выберите стек участника' : 'Выберите ваш стек'}
             />
-
             {isSearchFilter ? (
               <TextField
                 select
@@ -105,7 +119,21 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
                 value={currentFormData.sex || ''}
                 onChange={(e) => handleFieldChange('sex', e.target.value)}
                 fullWidth
-                sx={{ mt: 2 }}
+                sx={{
+                  mt: 2,
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderRadius: 5,
+                    },
+                    '&:hover fieldset': {
+                      borderRadius: 5,
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderRadius: 5,
+                    },
+                  },
+                }}
+
               >
                 <MenuItem value="">Любой</MenuItem>
                 <MenuItem value="male">Мужской</MenuItem>
@@ -118,7 +146,20 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
                 value={currentFormData.format || ''}
                 onChange={(e) => handleFieldChange('format', e.target.value)}
                 fullWidth
-                sx={{ mt: 2 }}
+                sx={{
+                  mt: 2,
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderRadius: 5,
+                    },
+                    '&:hover fieldset': {
+                      borderRadius: 5,
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderRadius: 5,
+                    },
+                  },
+                }}
               >
                 <MenuItem value="">Любой</MenuItem>
                 <MenuItem value="offline">Оффлайн</MenuItem>
@@ -128,11 +169,11 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
           </DialogContent>
           <DialogActions>
             <Button onClick={handleReset}>Сбросить</Button>
-            <Button onClick={handleClose}>Отменить</Button>
             <Button 
               type="submit" 
               form="filter-form"
               variant="contained"
+              sx={{ borderRadius: 20}}
             >
               Применить
             </Button>

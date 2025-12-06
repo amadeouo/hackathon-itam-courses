@@ -1,0 +1,63 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 10px 0 10px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-s);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.avatarWrapper {
+  width: 100%;
+}
+
+.avatar,
+.avatarPlaceholder {
+  position: relative;
+  width: 100%;
+  height: 167px;
+  border-radius: var(--border-radius-xs);
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  background-color: #E0E0E0;
+}
+
+.name {
+  font-size: 15px;
+  margin: 0 0 4px 0;
+}
+
+.specialization {
+  position: absolute;
+  padding: 4px 10px;
+  border: var(--border-black-small);
+  border-radius: var(--border-radius-xxs);
+  font-size: 10px;
+  top: 7px;
+  right: 6px;
+  background-color: var(--color-white);
+}
+
+/* Планшеты - 768px+ */
+@media (min-width: 768px) {
+  .card {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .specialization {
+    font-size: 15px;
+  }
+}

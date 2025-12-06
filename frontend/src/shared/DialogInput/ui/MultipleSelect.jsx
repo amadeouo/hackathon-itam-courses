@@ -67,7 +67,11 @@ export default function MultipleSelectChip({
   return (
     <div>
       <FormControl sx={{ marginTop: 2, width: '100%' }}>
-        <InputLabel id="demo-multiple-chip-label">{label}</InputLabel>
+        <InputLabel
+          id="demo-multiple-chip-label"
+        >
+          {label}
+        </InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
@@ -75,6 +79,7 @@ export default function MultipleSelectChip({
           value={personName}
           onChange={handleChange}
           input={<OutlinedInput id="select-multiple-chip" label={label} />}
+          sx={{ borderRadius: 5 }}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
               {selected.map((value) => (

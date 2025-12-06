@@ -1,6 +1,8 @@
+import { useContext, useState } from 'react'
 import classes from './Search.module.css'
-import {FilterDialog} from "@shared/Dialog/ui/FilterDialog";
-import {useLocation} from "react-router-dom";
+import { FilterDialog } from '@shared/Dialog/ui/FilterDialog'
+import { useLocation } from 'react-router-dom'
+import { MainContext } from '@app/main-context/main-context'
 
 export const Search = (props) => {
   const {
@@ -8,16 +10,28 @@ export const Search = (props) => {
     isSearchFilter: isSearchFilterProp,
   } = props
 
-  const location = useLocation().pathname;
-  // Определяем, является ли это страницей поиска участников
+  const location = useLocation().pathname
+  const { searchQuery, setSearchQuery } = useContext(MainContext)
+  const [localQuery, setLocalQuery] = useState(searchQuery || '')
+
   const isSearchFilter = isSearchFilterProp !== undefined 
     ? isSearchFilterProp 
-    : location === '/search';
+    : location === '/search'
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSearchQuery(localQuery)
+  }
+
+  const handleChange = (e) => {
+    setLocalQuery(e.target.value)
+  }
 
   return (
     <form
       className={classes.wrapper}
       data-js-todo-search-form
+      onSubmit={handleSubmit}
     >
       <div className={classes.searchWrapper}>
         <button className={classes.searchImage} type="submit">
@@ -30,6 +44,8 @@ export const Search = (props) => {
           type="search"
           id="search"
           placeholder={isSearchFilter ? 'Поиск участников' : 'Поиск хакатонов'}
+          value={localQuery}
+          onChange={handleChange}
         />
       </div>
       {isHaveFilter && <FilterDialog isSearchFilter={isSearchFilter} />}

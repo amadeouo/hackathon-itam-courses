@@ -8,9 +8,15 @@
 
   --font-family: "Roboto Flex", sans-serif;
 
+  --border-black-small: 1px solid black;
+
   --border-radius-l: 60px;
   --border-radius-m: 30px;
+  --border-radius-s: 20px;
+  --border-radius-xs: 10px;
+  --border-radius-xxs: 5px;
   --border-radius-circle: 50%;
+
 
   --transition-duration: 0.2s;
 }

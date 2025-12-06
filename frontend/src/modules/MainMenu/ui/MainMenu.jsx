@@ -1,5 +1,6 @@
 import classes from './MainMenu.module.css'
-import {Search} from "@modules/Search/ui/Search";
+import { Search } from '@modules/Search/ui/Search'
+import { UsersCardList } from '@modules/UsersCard/ui'
 
 export const MainMenu = (props) => {
   const {
@@ -12,6 +13,7 @@ export const MainMenu = (props) => {
         isHaveFilter
         isSearchFilter={isSearchPage}
       />
+      {isSearchPage && <UsersCardList />}
     </section>
   )
 }

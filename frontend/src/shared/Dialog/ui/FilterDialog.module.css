@@ -25,7 +25,8 @@
   }
 }
 
-.dialog {
-  border-radius: var(--border-radius-m);
+.cancelButton {
+  display: block;
 }
+
 

@@ -13,8 +13,7 @@ export const MainProvider = (props) => {
     format: '',
     dateRange: '',
   });
-
-
+  const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <MainContext.Provider value={
@@ -23,6 +22,8 @@ export const MainProvider = (props) => {
         setFormDataSearch,
         formDataMain,
         setFormDataMain,
+        searchQuery,
+        setSearchQuery,
       }
     }>
       {children}
