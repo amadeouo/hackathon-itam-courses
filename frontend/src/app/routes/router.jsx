@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { Main } from '@pages/Main/ui/Main.jsx'
 import { Auth } from '@pages/Auth/ui/Auth.jsx'
+import {MainMenu} from "@modules/MainMenu/ui/MainMenu";
 
 export const router = createBrowserRouter([
   {
@@ -9,7 +10,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/main",
-        element: ""
+        element: <MainMenu />,
       },
       {
         path: "/search",

@@ -7,16 +7,14 @@ export function Main() {
   // const isAuthed = auth.isAuthed()
   const isAuthed = true
 
-  return (
-    <div className={classes.wrapper}>
-      {isAuthed ? (
-        <PageWrapper />
-      ) : (
-        <div className={classes.auth}>
-          <p>Чтобы продолжить, войдите через Telegram.</p>
-          <Link to="/auth">Перейти к входу</Link>
-        </div>
-      )}
-    </div>
-  )
+  if (isAuthed) {
+    return <PageWrapper />
+  } else {
+    return (
+      <div className={classes.auth}>
+        <p>Чтобы продолжить, войдите через Telegram.</p>
+        <Link to="/auth">Перейти к входу</Link>
+      </div>
+    )
+  }
 }

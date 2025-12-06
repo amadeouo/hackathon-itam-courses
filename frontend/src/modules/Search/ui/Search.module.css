@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px
+}
+
+.searchWrapper {
+  display: flex;
+  flex-grow: 2;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-m);
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+.input {
+  position: relative;
+  width: 100%;
+  border: none;
+  border-radius: var(--border-radius-m);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 46px;
+}
+
+.searchImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.filterWrapper {
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-circle);
+}
+

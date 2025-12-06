@@ -1,3 +1,7 @@
-.wrapper {
-
+.header1 {
+  color: var(--color-white);
+  margin-top: 59px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 60px;
 }

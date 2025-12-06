@@ -1,0 +1,16 @@
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-light-purple: #734AC6;
+  --color-ultralight-purple: #DBC5EE;
+  --color-dark-purple: #641CB1;
+  --color-dark-blue: #01033E;
+
+  --font-family: "Roboto Flex", sans-serif;
+
+  --border-radius-l: 60px;
+  --border-radius-m: 30px;
+  --border-radius-circle: 50%;
+
+  --transition-duration: 0.2s;
+}

@@ -4,26 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee756409-1639-4f70-a947-25e984e0d3de" name="Changes" comment="fixes">
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/Navigation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/Navigation.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/card-hack/ui/CardHack/CardHack.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/card-hack/ui/CardHack/CardHack.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/card-hack/ui/CardHack/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/page-wrapper/ui/PageWrapper.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/shared/page-wrapper/ui/PageWrapper.module.css" afterDir="false" />
+    <list default="true" id="ee756409-1639-4f70-a947-25e984e0d3de" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/styles/variables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui/MainMenu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui/MainMenu.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Search/ui/Search.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Search/ui/Search.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modules/Search/ui/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/Dialog/ui/FilterDialog.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/Dialog/ui/FilterDialog.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/Dialog/ui/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui/MultipleSelect.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui/MultipleSelect.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/routes/router.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/styles/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/styles/fonts.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home/ui/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home/ui/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/modules/Header/ui/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/Navigation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/modules/Navigation/ui/Navigation.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Main/ui/Main.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/shared/assets/icons/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/assets/icons/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/shared/page-wrapper/ui/PageWrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/page-wrapper/ui/PageWrapper.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +40,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSX Component Folder with styles" />
+        <option value="JSX Component Folder" />
         <option value="JSX Component Folder with module styles.jsx.child.0" />
         <option value="JSX Component Folder with module styles.jsx.child.1" />
         <option value="JSX Component Folder with module styles" />
@@ -43,21 +50,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "amadeouo"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;amadeouo&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:amadeouo/hackathon-itam-courses.git",
-    "accountId": "33c58d27-7786-45f5-9e06-fb3030fe26f5"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:amadeouo/hackathon-itam-courses.git&quot;,
+    &quot;accountId&quot;: &quot;33c58d27-7786-45f5-9e06-fb3030fe26f5&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="36KYXWsdXA503POiOJYhpBcZ5oX" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,33 +73,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/amadeo/Programming/hackathon/hackathon-itam-courses",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/amadeo/Programming/hackathon/hackathon-itam-courses&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/src/modules/Header/ui" />
-      <recent name="$PROJECT_DIR$/frontend/src/modules/Navigation/ui" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/main-context.js" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/routes" />
+      <recent name="$PROJECT_DIR$/frontend/src/shared/DialogInput/ui" />
       <recent name="$PROJECT_DIR$/frontend/src/shared" />
+      <recent name="$PROJECT_DIR$/frontend/src/modules/Search/Dialog/ui" />
+      <recent name="$PROJECT_DIR$/frontend/src/modules/Filter/ui" />
+      <recent name="$PROJECT_DIR$/frontend/src/modules/MainMenu/ui" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -109,7 +116,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764756769325</updated>
-      <workItem from="1764756770562" duration="64032000" />
+      <workItem from="1764756770562" duration="74562000" />
+      <workItem from="1764982613617" duration="4023000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -271,16 +279,32 @@
       <option name="project" value="LOCAL" />
       <updated>1764966309367</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="init">
+      <option name="closed" value="true" />
+      <created>1764971510192</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1764971510192</updated>
+    </task>
+    <task id="LOCAL-00022" summary="init">
+      <option name="closed" value="true" />
+      <created>1764971516795</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1764971516795</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
