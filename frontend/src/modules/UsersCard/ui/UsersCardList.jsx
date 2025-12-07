@@ -3,7 +3,6 @@ import { UsersCard } from './UsersCard'
 import classes from './UsersCardList.module.css'
 import { MainContext } from '@app/main-context/main-context'
 
-// Моковые данные пользователей (в будущем будут браться с бэкенда)
 const MOCK_USERS = [
   {
     id: 1,
