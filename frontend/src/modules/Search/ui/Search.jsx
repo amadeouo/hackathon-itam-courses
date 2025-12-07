@@ -22,13 +22,17 @@ export const Search = (props) => {
     hacks = []
   } = props
 
-  const location = useLocation().pathname
+  const locationObj = useLocation()
+  const pathname = locationObj.pathname
+  const isSearchPage = isSearchFilterProp !== undefined ? isSearchFilterProp : pathname === '/search'
+
   const { searchQuery, setSearchQuery, formDataMain } = useContext(MainContext)
   const [localQuery, setLocalQuery] = useState(searchQuery || '')
 
-  const isSearchFilter = isSearchFilterProp !== undefined 
-    ? isSearchFilterProp 
-    : location === '/search'
+  useEffect(() => {
+    setLocalQuery('')
+    setSearchQuery('')
+  }, [pathname])
 
   useEffect(() => {
     if (typeof onResult === 'function' && hacks.length > 0) {
@@ -37,13 +41,19 @@ export const Search = (props) => {
     }
   }, [localQuery, formDataMain, hacks])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSearchQuery(localQuery)
+  const handleChange = (e) => {
+    const newQuery = e.target.value
+    setLocalQuery(newQuery)
+    if (isSearchPage) {
+      setSearchQuery(newQuery)
+    }
   }
 
-  const handleChange = (e) => {
-    setLocalQuery(e.target.value)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!isSearchPage) {
+      setSearchQuery(localQuery)
+    }
   }
 
   return (
@@ -51,6 +61,7 @@ export const Search = (props) => {
       className={classes.wrapper}
       data-js-todo-search-form
       onSubmit={handleSubmit}
+      autoComplete="off"
     >
       <div className={classes.searchWrapper}>
         <button className={classes.searchImage} type="submit">
@@ -62,12 +73,12 @@ export const Search = (props) => {
           className={classes.input}
           type="search"
           id="search"
-          placeholder={isSearchFilter ? 'Поиск участников' : 'Поиск хакатонов'}
+          placeholder={isSearchPage ? 'Поиск участников' : 'Поиск хакатонов'}
           value={localQuery}
           onChange={handleChange}
         />
       </div>
-      {isHaveFilter && <FilterDialog isSearchFilter={isSearchFilter} />}
+      {isHaveFilter && <FilterDialog isSearchFilter={isSearchPage} />}
     </form>
   )
 }
