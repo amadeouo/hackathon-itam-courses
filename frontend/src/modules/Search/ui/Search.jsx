@@ -1,22 +1,41 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import classes from './Search.module.css'
 import { FilterDialog } from '@shared/Dialog/ui/FilterDialog'
 import { useLocation } from 'react-router-dom'
 import { MainContext } from '@app/main-context/main-context'
 
+function filterHacks(hacks, { searchQuery, filters }) {
+  return hacks.filter(hack => {
+    const matchFormat = !filters?.format || hack.format === filters.format;
+    const q = searchQuery?.trim().toLowerCase();
+    const matchQuery = !q || hack.name.toLowerCase().includes(q) || hack.desc.toLowerCase().includes(q);
+    const matchStack = !filters?.stack || filters.stack.length === 0 || (hack.stack && hack.stack.some(s => filters.stack.includes(s)));
+    return matchFormat && matchStack && matchQuery;
+  });
+}
+
 export const Search = (props) => {
   const {
     isHaveFilter,
     isSearchFilter: isSearchFilterProp,
+    onResult,
+    hacks = []
   } = props
 
   const location = useLocation().pathname
-  const { searchQuery, setSearchQuery } = useContext(MainContext)
+  const { searchQuery, setSearchQuery, formDataMain } = useContext(MainContext)
   const [localQuery, setLocalQuery] = useState(searchQuery || '')
 
   const isSearchFilter = isSearchFilterProp !== undefined 
     ? isSearchFilterProp 
     : location === '/search'
+
+  useEffect(() => {
+    if (typeof onResult === 'function' && hacks.length > 0) {
+      const result = filterHacks(hacks, { searchQuery: localQuery, filters: formDataMain })
+      onResult(result)
+    }
+  }, [localQuery, formDataMain, hacks])
 
   const handleSubmit = (e) => {
     e.preventDefault()
