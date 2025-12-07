@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react'
+import { useContext, useState, useEffect, useRef } from 'react'
 import classes from './Search.module.css'
 import { FilterDialog } from '@shared/Dialog/ui/FilterDialog'
 import { useLocation } from 'react-router-dom'
@@ -22,38 +22,42 @@ export const Search = (props) => {
     hacks = []
   } = props
 
-  const locationObj = useLocation()
-  const pathname = locationObj.pathname
-  const isSearchPage = isSearchFilterProp !== undefined ? isSearchFilterProp : pathname === '/search'
+  const location = useLocation().pathname
+  const isSearchFilter = isSearchFilterProp !== undefined 
+    ? isSearchFilterProp 
+    : location === '/search'
 
   const { searchQuery, setSearchQuery, formDataMain } = useContext(MainContext)
   const [localQuery, setLocalQuery] = useState(searchQuery || '')
+  const debounceRef = useRef()
 
+  // Универсальный debounce-фильтрация для любых страниц
   useEffect(() => {
-    setLocalQuery('')
-    setSearchQuery('')
-  }, [pathname])
+    if (debounceRef.current) clearTimeout(debounceRef.current)
+    debounceRef.current = setTimeout(() => {
+      setSearchQuery(localQuery)
+      if (typeof onResult === 'function' && hacks.length > 0) {
+        const result = filterHacks(hacks, { searchQuery: localQuery, filters: formDataMain })
+        onResult(result)
+      }
+    }, 300)
+    return () => clearTimeout(debounceRef.current)
+    // eslint-disable-next-line
+  }, [localQuery, formDataMain, hacks])
 
-  useEffect(() => {
+  // Submit — мгновенная фильтрация, debounce сбрасываем
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (debounceRef.current) clearTimeout(debounceRef.current)
+    setSearchQuery(localQuery)
     if (typeof onResult === 'function' && hacks.length > 0) {
       const result = filterHacks(hacks, { searchQuery: localQuery, filters: formDataMain })
       onResult(result)
     }
-  }, [localQuery, formDataMain, hacks])
-
-  const handleChange = (e) => {
-    const newQuery = e.target.value
-    setLocalQuery(newQuery)
-    if (isSearchPage) {
-      setSearchQuery(newQuery)
-    }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!isSearchPage) {
-      setSearchQuery(localQuery)
-    }
+  const handleChange = (e) => {
+    setLocalQuery(e.target.value)
   }
 
   return (
@@ -61,7 +65,6 @@ export const Search = (props) => {
       className={classes.wrapper}
       data-js-todo-search-form
       onSubmit={handleSubmit}
-      autoComplete="off"
     >
       <div className={classes.searchWrapper}>
         <button className={classes.searchImage} type="submit">
@@ -73,12 +76,12 @@ export const Search = (props) => {
           className={classes.input}
           type="search"
           id="search"
-          placeholder={isSearchPage ? 'Поиск участников' : 'Поиск хакатонов'}
+          placeholder={isSearchFilter ? 'Поиск участников' : 'Поиск хакатонов'}
           value={localQuery}
           onChange={handleChange}
         />
       </div>
-      {isHaveFilter && <FilterDialog isSearchFilter={isSearchPage} />}
+      {isHaveFilter && <FilterDialog isSearchFilter={isSearchFilter} />}
     </form>
   )
 }
