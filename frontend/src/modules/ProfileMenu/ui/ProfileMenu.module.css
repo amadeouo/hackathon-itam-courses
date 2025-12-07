@@ -1,0 +1,95 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: #000;
+}
+.profileBox {
+  margin-bottom: 10px;
+}
+.photoBox {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  background: #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.photoStub {
+  width: 100%;
+  height: 290px;
+  border-radius: 30px;
+  background: #ddd;
+}
+.specBox {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: #fff;
+  color: #161616;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 9px 18px;
+  border-radius: 22px;
+  z-index: 2;
+  box-shadow: 0 2px 16px #23232317;
+}
+.nameSurname {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.03;
+  text-shadow: 0 2px 12px #0007;
+  z-index: 1;
+}
+.tgBox {
+  background: #fff;
+  color: #191919;
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 60px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.descSection {
+  margin: 25px 0 0 0;
+  color: #fff;
+  font-size: 25px;
+}
+.descLabel {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.descBody {
+  font-size: 16px;
+  color: #fff;
+}
+.purpleBtn {
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin-top: 13px;
+  background: #7F55DA;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 60px;
+  transition: background .18s;
+  cursor: pointer;
+}
+.purpleBtn:active {
+  background: #5F32b3;
+}
