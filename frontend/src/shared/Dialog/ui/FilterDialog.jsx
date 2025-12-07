@@ -13,58 +13,58 @@ import { MainContext } from "@app/main-context/main-context";
 
 export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
   const [open, setOpen] = useState(false);
-
   const { formDataSearch, setFormDataSearch, formDataMain, setFormDataMain } = useContext(MainContext);
 
-  const currentFormData = isSearchFilter ? formDataSearch : formDataMain;
+  // Сохраняем/редактируем фильтры только здесь:
+  const initialFilters = isSearchFilter
+    ? { ...formDataSearch }
+    : { ...formDataMain };
+  const defaultFilters = isSearchFilter
+    ? { stack: [], sex: '' }
+    : { stack: [], format: '', dateRange: '' };
   const setCurrentFormData = isSearchFilter ? setFormDataSearch : setFormDataMain;
 
+  const [localFormData, setLocalFormData] = useState(initialFilters);
+
+  // Открытие — сбрасываем локальное состояние к актуальному из контекста
   const handleClickOpen = () => {
+    setLocalFormData(isSearchFilter ? { ...formDataSearch } : { ...formDataMain });
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
 
+  // Только локально меняем фильтры
   const handleStackChange = (selectedStack) => {
-    setCurrentFormData(prev => ({
+    setLocalFormData(prev => ({
       ...prev,
       stack: Array.isArray(selectedStack) ? selectedStack : []
     }));
   };
-
   const handleFieldChange = (fieldName, value) => {
-    setCurrentFormData(prev => ({
+    setLocalFormData(prev => ({
       ...prev,
       [fieldName]: value
     }));
   };
-
+  // По "Применить" сохраняем состояние
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    setCurrentFormData(localFormData);
     if (onFiltersChange) {
-      onFiltersChange(currentFormData);
+      onFiltersChange(localFormData);
     }
-    
     handleClose();
   };
-
+  // По сбросу сбрасываем фильтр и сохраняем сброшенное
   const handleReset = () => {
-    if (isSearchFilter) {
-      setFormDataSearch({
-        stack: [],
-        sex: '',
-      });
-    } else {
-      setFormDataMain({
-        stack: [],
-        format: '',
-        dateRange: '',
-      });
+    setLocalFormData(defaultFilters);
+    setCurrentFormData(defaultFilters);
+    if (onFiltersChange) {
+      onFiltersChange(defaultFilters);
     }
-    handleClose()
+    handleClose();
   };
 
   return (
@@ -108,7 +108,7 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
               Выберите нужные фильтры для поиска {isSearchFilter ? 'участников' : 'хакатонов'}
             </DialogContentText>
             <MultipleSelectChip
-              value={currentFormData.stack || []}
+              value={localFormData.stack || []}
               onChange={handleStackChange}
               label={isSearchFilter ? 'Выберите стек участника' : 'Выберите ваш стек'}
             />
@@ -116,7 +116,7 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
               <TextField
                 select
                 label="Пол"
-                value={currentFormData.sex || ''}
+                value={localFormData.sex || ''}
                 onChange={(e) => handleFieldChange('sex', e.target.value)}
                 fullWidth
                 sx={{
@@ -133,7 +133,6 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
                     },
                   },
                 }}
-
               >
                 <MenuItem value="">Любой</MenuItem>
                 <MenuItem value="male">Мужской</MenuItem>
@@ -143,7 +142,7 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
               <TextField
                 select
                 label="Формат"
-                value={currentFormData.format || ''}
+                value={localFormData.format || ''}
                 onChange={(e) => handleFieldChange('format', e.target.value)}
                 fullWidth
                 sx={{
