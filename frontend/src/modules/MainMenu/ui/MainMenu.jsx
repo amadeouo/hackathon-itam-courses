@@ -93,7 +93,7 @@ export const MainMenu = (props) => {
     isSearchPage
   } = props
 
-  const [openCards, setOpenCards] = useState([]) // массив id открытых карточек
+  const [openCards, setOpenCards] = useState([])
   const [filtered, setFiltered] = useState(HACKATHONS)
 
   const toggleCard = i => {
