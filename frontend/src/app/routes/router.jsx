@@ -3,6 +3,7 @@ import { Main } from '@pages/Main/ui/Main.jsx'
 import { Auth } from '@pages/Auth/ui/Auth.jsx'
 import {MainMenu} from "@modules/MainMenu/ui/MainMenu";
 import {ProfileMenu} from "@modules/ProfileMenu/ui/ProfileMenu";
+import {Hack} from "@pages/Hack/ui/Hack";
 
 export const router = createBrowserRouter([
   {
@@ -28,4 +29,14 @@ export const router = createBrowserRouter([
     path: '/auth',
     element: <Auth />,
   },
+  {
+    path: '/hack',
+    element: <Hack />,
+    children: [
+      {
+        path: ':idHack',
+        element: '',
+      }
+    ]
+  }
 ])

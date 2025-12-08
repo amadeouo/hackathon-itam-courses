@@ -2,6 +2,7 @@ import classes from './MainMenu.module.css'
 import { Search } from '@modules/Search/ui/Search'
 import { useState } from 'react'
 import {UsersCardList} from "@modules/UsersCard/ui";
+import {Link} from 'react-router-dom'
 
 // Тестовые данные (пример)
 const HACKATHONS = [
@@ -81,7 +82,9 @@ function CardHackathon({ hack, open, onToggle, style }) {
         {open && <>
           <div className={classes.cardDesc}>{hack.desc}</div>
           <div className={classes.cardOwner}>Ответственный: <b>{hack.owner}</b></div>
-          <button className={classes.participateBtn}>Участвовать</button>
+          <Link to={`/hack/${hack.id}`} className={classes.link} >
+            <button className={classes.participateBtn}>Участвовать</button>
+          </Link>
         </>}
       </div>
     </div>

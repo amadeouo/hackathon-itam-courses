@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import { auth } from '@shared/auth-token/auth.js'
+import classes from './Auth.module.css'
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8080/api'
 const BOT_USERNAME = import.meta.env.VITE_TG_BOT_USERNAME || ''
@@ -57,8 +58,8 @@ export function Auth() {
   }, [navigate])
 
   return (
-    <div>
-      <h2>Вход через Telegram</h2>
+    <div className={classes.wrapper}>
+      <h2 className={classes.header}>Вход через Telegram</h2>
       {!BOT_USERNAME && (
         <p>
           Не задан VITE_TG_BOT_USERNAME. Укажите юзернейм бота в .env фронтенда, например:
@@ -67,7 +68,7 @@ export function Auth() {
         </p>
       )}
       <div ref={widgetRef} />
-      <button onClick={() => navigate('/') }>На главную</button>
+      <button onClick={() => navigate('/')} className={classes.button}>На главную</button>
     </div>
   )
 }
