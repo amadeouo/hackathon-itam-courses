@@ -1,5 +1,14 @@
 import classes from './Hack.module.css'
-import {PageWrapper} from "@shared/page-wrapper/ui/PageWrapper";
+import {ButtonBack} from "@shared/button-back/ui/ButtonBack/ButtonBack";
+import {Navigation} from "@modules/Navigation/ui/Navigation";
 
 export const Hack = () => {
+  return (
+    <>
+      <header className={classes.wrapperHeader}>
+        <ButtonBack />
+      </header>
+      <Navigation />
+    </>
+  )
 }

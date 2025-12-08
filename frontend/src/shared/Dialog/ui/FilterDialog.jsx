@@ -15,7 +15,6 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
   const [open, setOpen] = useState(false);
   const { formDataSearch, setFormDataSearch, formDataMain, setFormDataMain } = useContext(MainContext);
 
-  // Сохраняем/редактируем фильтры только здесь:
   const initialFilters = isSearchFilter
     ? { ...formDataSearch }
     : { ...formDataMain };
@@ -26,7 +25,6 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
 
   const [localFormData, setLocalFormData] = useState(initialFilters);
 
-  // Открытие — сбрасываем локальное состояние к актуальному из контекста
   const handleClickOpen = () => {
     setLocalFormData(isSearchFilter ? { ...formDataSearch } : { ...formDataMain });
     setOpen(true);
@@ -35,7 +33,6 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
     setOpen(false);
   };
 
-  // Только локально меняем фильтры
   const handleStackChange = (selectedStack) => {
     setLocalFormData(prev => ({
       ...prev,
@@ -48,7 +45,6 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
       [fieldName]: value
     }));
   };
-  // По "Применить" сохраняем состояние
   const handleSubmit = (event) => {
     event.preventDefault();
     setCurrentFormData(localFormData);
@@ -57,7 +53,6 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
     }
     handleClose();
   };
-  // По сбросу сбрасываем фильтр и сохраняем сброшенное
   const handleReset = () => {
     setLocalFormData(defaultFilters);
     setCurrentFormData(defaultFilters);
@@ -107,11 +102,13 @@ export const FilterDialog = ({ onFiltersChange, isSearchFilter = false }) => {
             <DialogContentText>
               Выберите нужные фильтры для поиска {isSearchFilter ? 'участников' : 'хакатонов'}
             </DialogContentText>
-            <MultipleSelectChip
-              value={localFormData.stack || []}
-              onChange={handleStackChange}
-              label={isSearchFilter ? 'Выберите стек участника' : 'Выберите ваш стек'}
-            />
+            {isSearchFilter && (
+              <MultipleSelectChip
+                value={localFormData.stack || []}
+                onChange={handleStackChange}
+                label={isSearchFilter ? 'Выберите стек участника' : 'Выберите ваш стек'}
+              />
+            )}
             {isSearchFilter ? (
               <TextField
                 select

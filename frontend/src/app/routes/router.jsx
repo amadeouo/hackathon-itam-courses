@@ -4,6 +4,8 @@ import { Auth } from '@pages/Auth/ui/Auth.jsx'
 import {MainMenu} from "@modules/MainMenu/ui/MainMenu";
 import {ProfileMenu} from "@modules/ProfileMenu/ui/ProfileMenu";
 import {Hack} from "@pages/Hack/ui/Hack";
+import {PageWrapper} from "@shared/page-wrapper/ui/PageWrapper";
+import {UserProfile} from "@modules/UserProfile/ui/UserProfile";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +38,16 @@ export const router = createBrowserRouter([
       {
         path: ':idHack',
         element: '',
+      }
+    ],
+  },
+  {
+    path: 'users',
+    element: <PageWrapper />,
+    children: [
+      {
+        path: ':idUser',
+        element: <UserProfile />,
       }
     ]
   }

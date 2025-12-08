@@ -1,0 +1,10 @@
+.wrapper {
+  width: 39px;
+  height: 39px;
+  border-radius: var(--border-radius-circle);
+  background-color: var(--color-white);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+}

@@ -21,7 +21,7 @@
   font-size: 16px;
 }
 
-/* Планшеты - 768px+ */
+
 @media (min-width: 768px) {
   .list {
     display: grid;
@@ -30,7 +30,6 @@
   }
 }
 
-/* Десктопы - 1024px+ */
 @media (min-width: 1024px) {
   .list {
     grid-template-columns: repeat(3, 1fr);

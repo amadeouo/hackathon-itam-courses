@@ -4,8 +4,8 @@ import classes from './Main.module.css'
 import {PageWrapper} from "@shared/page-wrapper/ui/PageWrapper";
 
 export function Main() {
-  const isAuthed = auth.isAuthed()
-  // const isAuthed = true
+  // const isAuthed = auth.isAuthed()
+  const isAuthed = true
 
   if (isAuthed) {
     return <PageWrapper />

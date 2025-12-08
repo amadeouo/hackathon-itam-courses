@@ -31,7 +31,6 @@ export const Search = (props) => {
   const [localQuery, setLocalQuery] = useState(searchQuery || '')
   const debounceRef = useRef()
 
-  // Универсальный debounce-фильтрация для любых страниц
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(() => {
@@ -42,10 +41,8 @@ export const Search = (props) => {
       }
     }, 300)
     return () => clearTimeout(debounceRef.current)
-    // eslint-disable-next-line
   }, [localQuery, formDataMain, hacks])
 
-  // Submit — мгновенная фильтрация, debounce сбрасываем
   const handleSubmit = (e) => {
     e.preventDefault()
     if (debounceRef.current) clearTimeout(debounceRef.current)

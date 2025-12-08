@@ -10,8 +10,16 @@ export const Header = () => {
       title: 'Хакатоны'
     },
     {
-      path: 'search',
+      path: '/search',
       title: 'Поиск'
+    },
+    {
+      path: '/hack',
+      title: 'О Хакатоне'
+    },
+    {
+      path: '/users',
+      title: 'Об участнике'
     }
   ]
 

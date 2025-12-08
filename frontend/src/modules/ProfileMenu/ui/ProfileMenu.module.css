@@ -93,3 +93,18 @@
 .purpleBtn:active {
   background: #5F32b3;
 }
+
+.link {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.link:hover {
+  color: blue;
+}
+
+.buttonBack {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

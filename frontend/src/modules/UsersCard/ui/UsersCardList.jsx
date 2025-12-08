@@ -2,8 +2,9 @@ import { useMemo, useState, useEffect, useContext } from 'react'
 import { UsersCard } from './UsersCard'
 import classes from './UsersCardList.module.css'
 import { MainContext } from '@app/main-context/main-context'
+import { Link } from 'react-router-dom'
 
-const MOCK_USERS = [
+export const MOCK_USERS = [
   {
     id: 1,
     firstName: 'Иван',
@@ -12,6 +13,8 @@ const MOCK_USERS = [
     specialization: 'Фронтенд',
     sex: 'male',
     stack: ['Фронтенд', 'Бекенд'],
+    desc: 'Фронтенд‑разработчик с опытом во фронтенде и бэкенде, уверенно чувствует себя как в интерфейсах, так и в серверной логике.',
+    nickname: '@ivan_front_fullstack'
   },
   {
     id: 2,
@@ -21,6 +24,8 @@ const MOCK_USERS = [
     specialization: 'Дизайнер',
     sex: 'female',
     stack: ['Дизайнер'],
+    desc: 'Продуктовый дизайнер, фокусируется на UX/UI и визуальной части интерфейсов, отвечает за удобство и стиль продукта.',
+    nickname: '@maria_uiux'
   },
   {
     id: 3,
@@ -30,6 +35,8 @@ const MOCK_USERS = [
     specialization: 'Бекенд',
     sex: 'male',
     stack: ['Бекенд', 'ML-инженер'],
+    desc: 'Бэкенд‑разработчик с опытом в ML, умеет строить надежные API и интегрировать модели машинного обучения в продукт.',
+    nickname: '@alex_backend_ml'
   },
   {
     id: 4,
@@ -39,6 +46,8 @@ const MOCK_USERS = [
     specialization: 'Продакт',
     sex: 'female',
     stack: ['Продакт', 'Аналитик'],
+    desc: 'Продакт‑менеджер с сильной аналитической базой, умеет собирать требования, считать метрики и развивать продукт по данным.',
+    nickname: '@elena_product_owner'
   },
   {
     id: 5,
@@ -48,6 +57,8 @@ const MOCK_USERS = [
     specialization: 'Тестировщик',
     sex: 'male',
     stack: ['Тестировщик'],
+    desc: 'Тестировщик, отвечает за качество продукта, пишет тест‑кейсы и находит критические баги до релиза.',
+    nickname: '@dmitry_qa'
   },
   {
     id: 6,
@@ -57,6 +68,8 @@ const MOCK_USERS = [
     specialization: 'Аналитик',
     sex: 'female',
     stack: ['Аналитик', 'Продакт'],
+    desc: 'Продуктовый аналитик, соединяет данные и бизнес‑цели, помогает принимать продуктовые решения на основе метрик.',
+    nickname: '@anna_data_product'
   },
   {
     id: 7,
@@ -66,6 +79,8 @@ const MOCK_USERS = [
     specialization: 'ML-инженер',
     sex: 'male',
     stack: ['ML-инженер', 'Бекенд'],
+    desc: 'ML‑инженер с бэкенд‑бэкграундом, внедряет модели в прод и оптимизирует их работу на сервере.',
+    nickname: '@sergey_ml_engineer'
   },
   {
     id: 8,
@@ -75,7 +90,10 @@ const MOCK_USERS = [
     specialization: 'Фронтенд',
     sex: 'female',
     stack: ['Фронтенд', 'Дизайнер'],
-  },
+    desc: 'Фронтенд‑разработчик с дизайнерским вкусом, сочетает качественную верстку с продуманным UI.',
+    nickname: '@olga_front_design'
+  }
+
 ]
 
 export const UsersCardList = () => {
@@ -129,7 +147,9 @@ export const UsersCardList = () => {
   return (
     <div className={classes.list}>
       {filteredUsers.map(user => (
-        <UsersCard key={user.id} user={user} />
+        <Link to={`/users/${user.id}`} key={user.id} className={classes.link} style={{textDecoration:'none', color: 'black'}}>
+          <UsersCard key={user.id} user={user} />
+        </Link>
       ))}
     </div>
   )
