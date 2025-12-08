@@ -1,3 +1,38 @@
-.wrapperHeader {
-  padding: 20px 24px;
+.wrapperSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.photoHack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: var(--border-radius-m);
+  background-color: #F0E092;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.badges {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.desc {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.button {
+  font-size: 16px;
+  border-radius: var(--border-radius-l);
+  border: none;
+  background-color: #724AC5;
+  color: var(--color-white);
+  padding: 12px 20px;
 }

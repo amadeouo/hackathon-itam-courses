@@ -33,11 +33,11 @@ export const router = createBrowserRouter([
   },
   {
     path: '/hack',
-    element: <Hack />,
+    element: <PageWrapper />,
     children: [
       {
         path: ':idHack',
-        element: '',
+        element: <Hack />,
       }
     ],
   },
