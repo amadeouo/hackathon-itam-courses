@@ -28,7 +28,7 @@ export function Auth() {
           return
         }
         auth.setToken(data.token)
-        navigate('/')
+        navigate('/main')
       } catch (e) {
         console.error(e)
         alert('Сетевая ошибка при попытке входа')
