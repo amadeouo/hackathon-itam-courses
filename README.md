@@ -1,61 +1,72 @@
+# Hackathon ITAM Courses
+
 ## Стек технологий
 
 ### Backend (`backend/`)
-
-- **Язык:** Python 3  
-- **Фреймворк:** FastAPI — основной web‑фреймворк (REST API)  
-- **БД и ORM:** SQLAlchemy — работа с базой данных  
-- **Драйвер БД:** asyncpg — асинхронный драйвер PostgreSQL  
-- **Аутентификация:** JWT (python-jose)  
-- **Сервер:** Uvicorn — ASGI‑сервер для разработки и продакшена  
-- **Контейнеризация:** Docker  
-- **Дополнительно:** bcrypt, python-dotenv, passlib — безопасность и работа с переменными окружения  
+- **Язык:** JavaScript (Node.js)
+- **Web-фреймворк:** Express
+- **Аутентификация:** JWT (jsonwebtoken), интеграция через Telegram
+- **Переменные окружения:** dotenv
+- **Контейнеризация:** Docker
+- **Хранилище пользователей:** In-memory JS (memory.store.js)
+- **Оркестрация:** docker-compose
 
 ### Frontend (`frontend/`)
+- **Язык:** JavaScript (ES6+)
+- **Фреймворк:** React v19
+- **Сборка:** Vite
+- **UI‑библиотека:** MUI (`@mui/material`), emotion
+- **HTTP‑клиент:** axios — общение с backend
+- **Роутинг:** React Router v7
+- **Стилизация:** emotion + CSS Modules
+- **Контейнеризация:** Docker
 
-- **Язык:** JavaScript (ES6+)  
-- **Фреймворк:** React (19.x)  
-- **Сборка:** Vite — сборка и dev‑сервер  
-- **UI‑библиотека:** MUI (`@mui/material`)  
-- **Стилизация:** emotion — стилизация компонентов  
-- **HTTP‑клиент:** axios — запросы к backend  
-- **Роутинг:** React Router — SPA‑маршрутизация  
-- **Контейнеризация:** Docker  
-
-### Инфраструктура и CI
-
-- **Reverse‑proxy и SSL:** Nginx  
-- **Оркестрация сервисов:** docker-compose  
+### Инфраструктура
+- **Reverse‑proxy:** Nginx
+- **Оркестрация:** docker-compose
 
 ---
 
-## Архитектура
+## Архитектура и структура каталогов
 
-### Backend (FastAPI + SQLAlchemy)
+### Backend
 
-Модульная структура проекта:
+- `src/`
+  - `app.js` — запуск Express
+  - `routes.js` — корневой роутер, подключает модули
+  - `modules/`
+    - `auth/` — авторизация (Telegram, JWT)
+    - `users/` — сервисы по работе с пользователями
+  - `db/` — локальное хранилище (in-memory)
+  - `utils/` — общие утилиты (Telegram auth)
 
-- `models` — ORM‑модели  
-- `repositories` — работа с базой данных, логика доступа к данным  
-- `router` — REST‑эндпоинты (авторизация, профиль, хакатон, команды)  
-- `schemas` — Pydantic‑схемы (DTO)  
-- `utils` — утилиты и тестовые данные  
+**Аутентификация:** вход через Telegram (bot-token). После успешного входа выдается JWT-токен. Пользователь сохраняется/обновляется в in-memory хранилище.
 
-Дополнительно:
+**REST API:** Основные эндпоинты — `/auth/telegram`, операции с пользователями.
 
-- **Аутентификация:** JWT через Telegram‑username, роли пользователя (`user` / `admin`)  
-- **Документация:** OpenAPI генерируется автоматически средствами FastAPI  
+### Frontend
 
-### Frontend (React + Vite)
+- `src/`
+  - `app/`
+    - `routes/` — описаны вложенные роуты
+    - `main-context/` — глобальный React-контекст состояния
+    - `app-wrapper/` — обертки
+    - `styles/` — глобальные стили
+  - `modules/` — крупные UI-модули (Header, MainMenu, Navigation и др.)
+  - `pages/` — основные страницы (Auth, Main, Hack и др.)
+  - `shared/` — переиспользуемые компоненты и стили
 
-Модульная структура:
+**Особенности:**
+- SPA с вложенными маршрутами (React Router)
+- Глобальный стейт через context/provider
+- UI: MUI + emotion + CSS-модули
+- Авторизация: Telegram, хранение токена (auth.js)
 
-- `src/pages` — страницы приложения (Auth, Main, Hack и др.)  
-- `src/modules` — крупные модули (Header, MainMenu и другие)  
-- `src/shared` — переиспользуемые компоненты, стили и утилиты  
+---
 
-Особенности:
+## Запуск
 
-- **Состояние:** глобальный контекст (`main-context`) для хранения состояния  
-- **Роутинг:** React Router, вложенные маршруты (см. `src/app/routes/router.jsx`)  
-- **Стилизация:** CSS‑модули + MUI/emotion  
+- Используйте `docker-compose up` для продакшена или запускайте фронт и бэк отдельно (см. Dockerfile в каждой части).
+
+## Авторы/вкладчики
+- ITAM Hackathon team
